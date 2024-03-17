@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Dashboard</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: whitesmoke;
+    }
+    .dashboard {
+        display: flex;
+        height: 100vh;
+    }
+    .menu {
+        background-color:#dbe8d8;
+        color:black;
+        padding: 20px;
+        min-width: 200px;
+        border-radius: 5rem;
+        margin-top: 15px;
+        margin-left: 10px;
+        border-color: black;
+    
+
+    }
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+    .blur {
+        background-image: url('mits1.jpg');
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        width: 900px;
+        margin-left: 280px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+    }
+    h2{
+        font-size: large;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        align-items: center;
+        margin-left: 65px;
+    }
+    ul {
+        margin-top: 15px;
+        padding: 3px;
+        text-decoration: none;
+        align-items: center;
+
+    }
+    ul li{
+        margin-top: 15px;
+        padding: 3px;
+        text-decoration: none;
+        align-items: center;
+        margin-left: 50px;
+
+    }
+    
+
+    li a{
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 40px;
+        text-decoration: none;
+        margin-top: 50px;
+
+    }
+    li{
+        list-style: none;
+    }
+
+        .profile-pic {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          overflow: hidden;
+          position: relative;
+          border-color: black;
+          margin-left: 35px;
+        }
+      
+        .profile-pic img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+      
+        .profile-pic:hover img {
+          transform: scale(1.1);
+        }
+      
+        .hover-effect {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .profile-pic:hover .hover-effect {
+          opacity: 1;
+        }
+      
+        .hover-effect p {
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+        }
+        
+      </style>
+   
+</head>
+<body>
+    <div class="dashboard">
+        <div class="menu">
+            <h2>Dashboard</h2>
+            <div class="profile-pic" id="profile-pic">
+                <img src="profile.jpeg" alt="">
+                <div class="hover-effect">
+                </div>
+              </div>
+              
+              <script>
+                const profilePic = document.getElementById('profile-pic');
+              
+                profilePic.addEventListener('mouseenter', () => {
+                  profilePic.classList.add('hover');
+                });
+              
+                profilePic.addEventListener('mouseleave', () => {
+                  profilePic.classList.remove('hover');
+                });
+              </script>
+              
+            
+            <div>
+            <ul><li><a href="dashboard1.html" >Departments</a></li>
+                <li><a href="index.html" id="logout">Logout</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="content">
+            <!-- Your content goes here -->
+        </div>
+        <div class="blur">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <img src="mits1.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                  <img src="mits3.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                  <img src="mits4.jpg" style="width:100%">
+                </div>
+              </div>
+              </nav>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("add-event").addEventListener("click", function() {
+            // Add event functionality here
+            alert("Add Event clicked!");
+        });
+
+        document.getElementById("logout").addEventListener("click", function() {
+            // Logout functionality here
+            alert("Do You Want To Logout!");
+        });
+    </script>
+    <script>
+        let slideIndex = 0;
+
+function showSlides() {
+let slides = document.getElementsByClassName("mySlides");
+for (let i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";  
+}
+slideIndex++;
+if (slideIndex > slides.length) {
+  slideIndex = 1
+}    
+slides[slideIndex - 1].style.display = "block";  
+setTimeout(showSlides, 1000); 
+}
+
+showSlides();
+</script>
+
+</body>
+</html>

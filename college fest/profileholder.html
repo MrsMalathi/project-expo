@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Picture Hover Effect</title>
+<style>
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .profile-pic:hover img {
+    transform: scale(1.1);
+  }
+
+  .hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-pic:hover .hover-effect {
+    opacity: 1;
+  }
+
+  .hover-effect p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="profile-pic" id="profile-pic">
+  <img src="profile.jpg" alt="Profile Picture">
+  <div class="hover-effect">
+    <p>Hover Effect Text</p>
+  </div>
+</div>
+
+<script>
+  const profilePic = document.getElementById('profile-pic');
+
+  profilePic.addEventListener('mouseenter', () => {
+    profilePic.classList.add('hover');
+  });
+
+  profilePic.addEventListener('mouseleave', () => {
+    profilePic.classList.remove('hover');
+  });
+</script>
+
+</body>
+</html>
